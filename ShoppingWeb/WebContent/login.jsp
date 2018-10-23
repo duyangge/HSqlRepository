@@ -1,0 +1,72 @@
+<%@page import="java.awt.SystemTray"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="web.service.bean.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="users" class="web.service.bean.user" scope="session"/>   
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>登录中</title>
+<link href="css/login.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+function myReload() {
+    document.getElementById("CreateCheckCode").src = document.getElementById("CreateCheckCode").src+"?nocache="+ new Date().getTime();
+  }
+</script>
+</head>
+<body>
+<div class="login_all">
+	<jsp:include page="login_top.jsp"></jsp:include>
+	<div class="login_content">
+		<form action="LoginServlet" method="post" name="userlogin" id="login">
+			<div class="alllogin">
+			<c:remove var="name"/>
+				<div>
+					<h2>Sign In</h2>
+				</div>
+				<div class="input_login">
+					<div class="login">
+						<input class="text" type="text" id="username"  placeholder="输入用户名/手机号" name="user" autocomplete="off"/>
+						<br/>
+						 <font class="mess">
+							<c:if test="${not empty mess}">
+								<c:out value="${mess}"/>
+							</c:if>
+						</font>
+						<c:remove var="mess"/>
+					</div>
+					<br>
+					<div class="login">
+						<input class="textpass" id="password" type="password"  placeholder="输入密码" name="psword3">
+					</div>
+					<br>
+					<div>
+						<input type="text" name="checkCode" style="width:70px;height:35px;"> 
+						<img src="<c:out value='PCCode'/>" id="CreateCheckCode" align="middle" style="margin-top:-10px;"> 
+						<a href="#" onclick="myReload()" style="font-size:12px;color:red;margin-left:100px;"> 看不清,换一个</a>	
+					</div>
+					<br>
+					<div>
+						<input class="button" type="button"  name="login" value="LOGIN" onclick="return reformsheet()">	
+					</div>
+					<br>
+					<div>
+						<a href="setpassword.jsp" class="login_resign">忘记密码</a>
+						<a href="resign.jsp" class="login_resign">免费注册</a>
+					</div>
+				</div>	
+			</div>
+		</form>
+	</div>
+</div>
+<jsp:include page="loginfoot.jsp"></jsp:include>
+<c:if test="${not empty errormsg }">
+	<script type="text/javascript">
+		alert("亲\n\n您输入的验证码有误请重新输入");
+	</script>
+</c:if>
+</body>
+<script type="text/javascript" src="js/login.js"></script>
+</html>

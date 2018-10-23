@@ -1,0 +1,64 @@
+
+.content{
+	margin:30px;
+}
+.content_left{
+	float:left;
+	margin-right:50px;	
+}
+.showmess{
+	border:0px;
+	width:400px;
+	height:265px;
+}
+.content_right{
+	
+}
+#addcartbutton{
+	width:97px;
+	height:35px;
+	border-radius:10px; 
+	color:white;
+	background:red;
+}
+#buybutton{
+	width:97px;
+	height:35px;
+	border-radius:10px; 
+	color:red;
+	background:white; 
+	font-weight:bold;
+}
+
+#goodnametitle{
+	font-size:10pt;
+	color:black;
+	/* font-weight:bold; */
+}
+#goodname_e{
+	font-size:13pt;
+	color:black;
+	font-weight:bold;
+}
+
+#goodbrand_e{
+	font-size:17px;
+	color:red;
+	font-weight:bold;
+}
+#goodintroduce_e{
+	font-size:17pt;
+	color:#c0c0c0;
+	font-weight:bold;
+}
+#goodprice_e{
+	font-size:23pt;
+	color:red;
+	font-weight:bold;
+}
+.all_buttom{
+	margin-top:60px;
+}
+.sheetshow_pricedel{
+	color:#c0c0c0;
+}

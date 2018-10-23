@@ -1,0 +1,78 @@
+body{
+ 	height:100%;
+	width:100%; 
+	background-image:url(../images/lunbo/timg.jpg);
+	background-repeat:no-repeat;
+	display:block;
+	text-align:center;
+	background-size:100% 100%;
+	background-attachment:fixed;
+	opacity:0.88;
+}
+.container{
+	position:absolute; 
+	top:30%; 
+	left:50%; 
+	margin:-150px 0 0 -200px; 
+	width:450px; 
+	height:450px; 
+}
+.allresign{
+	background:hsla(0,0%,100%,3);
+	text-align:center;
+	width:430px;
+	height:440px;
+	border-radius:5px;	
+}
+
+.button{
+	height:37px;
+	width:365px; 
+	background:#0080ff;
+	border:none;
+	border-radius:5px;	
+}		
+.button:active{
+	background:#000080;
+	color:black;
+	font-weight;bold;
+}
+.button:hover{
+	background:#0080c0;
+	color:black;
+	font-weight;bold;
+}
+.text,.textpass{
+	height:40px;
+	width:300px;
+	border-left:none;
+	border-top:none;
+	border-right:none;
+	padding-left:70px;	
+}
+
+.text,.button,,.textpass{
+	margin-right:50px;
+	border-radius:5px;
+}
+
+.text{
+	background:url(../images/background/head.png) no-repeat 0 center;
+}
+.textpass{
+	background:url(../images/background/suo.png) no-repeat 0 center;
+}
+
+.login_resign{
+	text-decoration:none;
+	color:black; 
+	font-family:"华文仿宋";
+	font-size:10pt;
+}
+.mess{
+	color:red;
+	font-size:12px;
+	font-weight:bold;
+}
+
+
