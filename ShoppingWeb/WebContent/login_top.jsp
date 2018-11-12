@@ -16,6 +16,14 @@
 			<a href="#">帮助</a>&nbsp;
 			<span>|</span>&nbsp;
 			<a href="connectionus.jsp">反馈</a>
+			<select>
+				<option>语言设置</option>
+				<option>中文</option>
+				<option >英文</option>
+				
+			</select>
+			<%-- <a href="${pageContext.request.contextPath }/user_login.action?request_locale=zh_CN">中文</a>
+			<a href="${pageContext.request.contextPath }/user_login.action?request_locale=en_US">英文</a> --%>
 		</div>
 	</div>
 </body>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+   
+   
+   <!--配置dao -->
+        <bean id="itemsDao" class="web.dao.impl.ItemsDaoImpl" >
+        	<property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        
+        <!--配置service -->
+        <bean id="itemsService" class="web.service.impl.ItemsServiceImpl">
+        	<property name="itemsDao" ref="itemsDao"></property>
+        </bean>
+        
+        <!--配置action  -->
+        <bean id="itemsAction" class="web.action.ItemsAction" scope="prototype">
+        	<property name="itemsService" ref="itemsService"></property>
+        </bean>
+        
+        
+ </beans>

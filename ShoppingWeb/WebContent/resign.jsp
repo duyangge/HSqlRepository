@@ -7,7 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>user-resgin</title>
 	<link href="css/regiter.css" rel="stylesheet" type="text/css"/>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 	/*1.创建xmlHTTpRequest对象createxmlHttpRequest()
 	 * 2.利用open方法创建于服务器的连接
 	 3.发送请求send
@@ -35,10 +35,10 @@
 			
 				}//onblur
 		 }//onload
-	</script>
+	</script> -->
 </head>
 <body>
-	<c:if test="${not empty requestScope.reginmess}">
+	<%-- <c:if test="${not empty requestScope.reginmess}">
 		<script type="text/javascript">
 			alert("亲\n\n您已注册成功请登录");
 		</script>
@@ -47,9 +47,9 @@
 		<script type="text/javascript">
 			alert("亲\n\n注册失败请重新注册");
 		</script>
-	</c:if>
+	</c:if> --%>
 	<div class="container">
-		<form id="resign" name="userresign" action="realServlet" method="post">
+		<form id="resign" name="userresign" action="${pageContext.request.contextPath }/user_register.action" method="post">
 				<div class="allresign" >
 					<div class="allresign_div">
 						<div class="resign_name">
@@ -57,21 +57,21 @@
 						</div>
 						<div class="input_resign">
 							<div class="login">
-								<input type="text" class="text" placeholder="请输入用户名/手机号" name="user" id="usernames"><br>
+								<input type="text" class="text" placeholder="请输入用户名/手机号" name="username" id="usernames"><br>
 								<font class="mess" id="alter"></font>
 								<c:remove var="messresign"/>
 							</div>
 							<br>
 							<div class="login">
-								<input type="text" class="text" placeholder="输入邮箱" name="useraddress" id="address">
+								<input type="text" class="text" placeholder="输入邮箱" name="address" id="address">
 							</div>
 							<br>
 							<div class="login">
-								<input class="textpass" type="password"  placeholder="设置密码" name="psword1" id="pswordone">
+								<input class="textpass" type="password"  placeholder="设置密码" name="password1" id="pswordone">
 							</div>
 							<br>
 							<div class="login">
-								<input class="textpass" type="password"  placeholder="确认密码" name="psword2" id="pswordtwo">
+								<input class="textpass" type="password"  placeholder="确认密码" name="password" id="pswordtwo">
 							</div>
 							<br>
 							<div>

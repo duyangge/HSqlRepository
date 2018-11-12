@@ -7,57 +7,62 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>购物车列表</title>
 <link href="css/mycart.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/addcart.js"></script>
 </head>
 <body>
-<c:if test="${not empty cartItems}">
-	<h5 align="left">${name}先生的购物车列表总计<span>${cartItems.size()}</span>件订单，详情如下：</h5>
+<c:if test="${not empty cartlist}">
+	<form action="${pageContext.request.contextPath }/cart_deleCart.action" method="post">
+	<h4 align="left"><font size="4px" color="blue">${user.getUsername()}先生</font>,商品数量总共<font  size="4px" color="red">${allCartCount}</font>件，详情如下：</h4>
 	<table border="1" cellspacing="0" class="tablecart" align="center" width="90%" style="border-left:none;border-right:none;border-buttom:none;">
 		<tr style="background:red">
+			<td align="center"><span class="showMesstitle">选择</span></td>
 			<td align="center"><span class="showMesstitle">商品</span></td>
 			<td align="center"><span class="showMesstitle">商品品牌</span></td>
 			<td align="center"><span class="showMesstitle">商品简介</span></td>
 			<td align="center"><span class="showMesstitle">商品单价</span></td>
 			<td align="center"><span class="showMesstitle">数量</span></td>
-			<td align="center"><span class="showMesstitle">操作</span></td>
 			<td align="center"><span class="showMesstitle">状态</span></td>
 			<td align="center"><span class="showMesstitle">小计</span></td>
-			<td align="center"><span class="showMesstitle">选择</span></td>
 		</tr>
-		<c:forEach var="item" items="${cartItems}" varStatus="status">
+		<c:forEach var="cartItems" items="${cartlist}" varStatus="status">
 				<tr>
-					<td align="center"><span class="showMess"><img src="${item.value.getImagesrc()}" width="40px" height="60px"/><c:out value="${item.value.getName()}"/></span></td>
-					<td align="center"><span class="showMess"><c:out value="${item.value.getBrand()}"/></span></td>
-					<td align="center"><span class="showMess"><c:out value="${item.value.getIntroduce()}"/></span></td>
-					<td align="center"><span class="showMess">¥<font id="unitprice"><c:out value="${item.value.getPrice()} "/></font></span></td>
+					<td align="center"><span class="showMess"><input type="checkbox" name="gidlist"  value="${cartItems.getGid()}"/></span></td>
+					<td align="center"><span class="showMess"><img src="${cartItems.getImgsrc()}" width="40px" height="60px"/><c:out value="${item.value.getName()}"/></span></td>
+					<td align="center"><span class="showMess"><c:out value="${cartItems.getGbrand()}"/></span></td>
+					<td align="center"><span class="showMess"><c:out value="${cartItems.getGintroduce()}"/></span></td>
+					<td align="center"><span class="showMess">¥<font id="unitprice"><c:out value="${cartItems.getGprice()} "/></font></span></td>
 					<td align="center">
-					<input type="button" name="addnumber" value="+" onclick="add()">
-					<input type="text" name="numbershowtext" value="${item.value.getOrdernumber()}" id="number" readonly="true" style="width:20px;">
-					<input type="button" name="reducenumber" value="-" onclick="reduce()">
+					<input type="button" name="addnumber" value="+" onclick="javaScript:window.location.href='${pageContext.request.contextPath }/cart_addCartNum.action?uid=${cartItems.getUid()}&gid=${cartItems.getGid()}&gnum=1'"/>
+					<input type="text" name="numbershowtext" value="${cartItems.getGnum()}" id="number" readonly="true" style="width:20px;">
+					<input type="button" name="reducenumber" value="-" onclick="javaScript:window.location.href='${pageContext.request.contextPath }/cart_decCartNum.action?uid=${cartItems.getUid()}&gid=${cartItems.getGid()}&gnum=1'"/>
 					</td>
-					<td align="center"><span><a href="delcartgoodServlet?action=post&ordernumber=${item.key}" onclick="DelCart()">移除</a></span></td>
-					<td align="center"><span class="showMess"><a href="StrogeMyCartServlet?number=${item.value.getOrdernumber()}&ordernumber=${item.key}&id=${item.value.getId()}&tablename=<c:out value="${tablename}" default='goods'/>" onclick="GoOrder()">点击下单</a></span></td>
-					<td align="center"><span class="showMess">¥<font id="subprice"><c:out value="${item.value.getOrdernumber()*item.value.getPrice()}"/></font></span></td>
-						<td align="center"><span class="showMess"><input type="checkbox" name=""></span></td>
+					<td align="center"><span class="showMess"><a href="#" onclick="GoOrder()">点击下单</a></span></td>
+					<td align="center"><span class="showMess">¥<font id="subprice"><c:out value="${cartItems.getGnum()*cartItems.getGprice()}"/></font></span></td>
 				</tr>
-				<%-- <c:set var="sumprice" value="${ }"/> --%>
 		</c:forEach>
-	</table>
+	</table><!--已选商品数量，已选商品总价格  -->
 	<div>
-		<%-- <c:out value="总价：¥${ }"/> --%>
+		<!-- <div style="float:left;margin-left:80px;"><input type="checkbox" name="gidlist"  value=""/>全选</div> -->
+		<div align="center" style=" margin-top:50px;margin-right:50px;">
+			<a href="#">购买</a>
+			<a href="#">我的订单</a>
+			<input type="submit" value="删除" border="0" style="color: blue; border:0px;background: white;font-size:15px;text-decoration: underline;">
+		</div>
+		<div align="right" style="margin-right:100px;"><span>已选择商品<font>{0}</font>件</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="showMess">合计<font id="selCartprice">￥${0}</font></span></div>
 	</div>
-	<div align="center" style=" margin-top:50px">
-		<a href="javaScript:removeall()">清空购物车</a>
-		<a href="showlistServlet?tablename=<c:out value="${tablename }" default='goods'/>" class="continueshopping">继续购物</a>
-		<a href="lookordersServlet">查看订单</a>
+	<!--分页处理 -->
+	<div>
+		<a href="${pageContext.request.contextPath }/cart_lookCart.action?currentpage=${showPage.getCurrentpage()-1}">上一页</a>
+		<span>当前${ showPage.getCurrentpage()}/${showPage.getTotalpages() }页</span>
+		<a href="${pageContext.request.contextPath }/cart_lookCart.action?currentpage=${showPage.getCurrentpage()+1}">下一页</a>
+	</div>
+	</form>
+	<div>
 	</div>
 </c:if>
-<c:if test="${empty cartItems}">
-	<script type="text/javascript">
-		alert("亲\n\n您的购物车是空空的,快去添加你喜欢的宝物");
-		history.back();
-	</script>
+<a href="javascript:history.go(-1);" class="continueshopping">返回</a>
+<c:if test="${empty cartlist}">
+		<h3 align="center" style="font-style: italic;font-weight: bold;font-size:14px; color:blue;">空空的，需要您去寻找你的宝藏......</h3>
 </c:if>
-	<a href="sum.jsp" style="text-align:center;">返回主页</a>
 </body>
-<script type="text/javascript" src="js/addcart.js"></script>
 </html>

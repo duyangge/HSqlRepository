@@ -22,7 +22,7 @@ import web.service.dao.BaseDao;
 
 public class cartsServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {//将物品显示出购物车
+		try {//将物品显示到购物车
 			String id=request.getParameter("id");
 			String tablename=request.getParameter("tablename");
 			Items item=new Items();

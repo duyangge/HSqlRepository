@@ -7,12 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>萍院欢乐购</title>
 <link href="css/sum.css" rel="stylesheet" type="text/css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
 <script type="text/javascript">
-/* window.onload=function(){
-	setTimeout( "alert('Hi,${name}欢迎你')",1000)//2s钟后关闭 
-} */
-</script> 
+ window.onload=function(){
+	setTimeout( "alert('Hi,${user.getUsername()}欢迎你')",1000)//2s钟后关闭 
+} 
+</script>  -->
 </head>
 <body>
 	<jsp:include page="head.jsp"/>
@@ -32,18 +32,6 @@
 		<jsp:include page="foot.jsp"/>
 		<c:if test="${ not empty tablename }">
 			<c:remove var="tablename" />
-		</c:if>
-		<c:if test="${ not empty goodlist }">
-			<c:remove var="goodlist"/>
-		</c:if>
-		<c:if test="${ not empty buylist }">
-			<c:remove var="buylist"/>
-		</c:if>
-		<c:if test="${not empty welcome }">
-			<script type="text/javascript">
-				var we="${welcome}";
-				alert("Hi,"+we+"欢迎你回来！");
-			</script>
 		</c:if>
 </body>
 </html>

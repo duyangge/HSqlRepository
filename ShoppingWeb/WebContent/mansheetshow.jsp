@@ -22,19 +22,19 @@
 	 <!--显示商品  -->
 	<div class="contentshow">
 		<table align="center">
-			<c:if test="${not empty items}">
+			<c:if test="${not empty itemslist}">
 			<c:forEach var="i" begin="0" end="5">
 			<tr>
-				<c:forEach var="item" items="${items}" varStatus="status">
+				<c:forEach var="items" items="${itemslist}" varStatus="status">
 					<td>
 						<div>
-							<a href="cartgoodServlet?action=get&id=${item.getId()}&tablename=<c:out value="${tablename}" default='goods'/>" class="personalshow_introduce">
-								<img src="${item.getImagesrc()}" width="230px" height="200px"/>	
+							<a href="${pageContext.request.contextPath }/items_goDetailItems.action?gid=${items.getGid()}&tablename=<c:out value="${tablename}" default='Items'/>" class="personalshow_introduce">
+								<img src="${items.getImgsrc()}" width="230px" height="200px"/>	
 								<div>
 									<dl>
 										<dt class="manshow_imagetext">限时抢购</dt>
-										<dt>${item.getIntroduce()}</dt>
-										<dt><b class="sheetshow_price">¥${item.getPrice()}</b>&nbsp;<s class="sheetshow_pricedel">¥${item.getPricing()}</s></dt>
+										<dt>${items.getGintroduce()}</dt>
+										<dt><b class="sheetshow_price">¥${items.getGprice()}</b>&nbsp;<s class="sheetshow_pricedel">¥${items.getGprice()}</s></dt>
 									</dl>	
 								</div>
 							</a>

@@ -90,8 +90,8 @@
 	margin-top:35px;
 }
 .mansheet_image{
-	background:#efefef;
-	border:1px solid #efefef;
+	/* background:#fff; */
+	border:0px solid #efefef;
 }
 .sheetimage_text_a{
 	text-decoration:none;

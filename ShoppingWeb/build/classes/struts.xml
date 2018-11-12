@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/><!-- 处理编码 -->
+	<constant name="struts.custom.i18n.resources" value="baseName"></constant><!-- 国际化 -->
+	<constant name="struts.devMode" value="true" /><!--启用开发者模式 （自动重新加载功能，每次修改属性或XML配置文件更改，应用程序不再需要重启才能生效） -->
+	
+	<package name="User" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="web.interceptor.LoginInterceptor"></interceptor>
+			<interceptor name="checkInterceptor" class="web.interceptor.CheckInterceptor"></interceptor>
+		</interceptors>
+		
+		<global-results>
+			<result name="success">/sum.jsp</result>
+		</global-results>
+		
+		<action name="user_*" class="userAction" method="{1}">
+			<interceptor-ref name="checkInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="login">/login.jsp</result>
+			<result name="register">/resign.jsp</result>
+			<allowed-methods>login,register,loginout</allowed-methods>
+		</action>
+		
+		<action name="items_*" class="itemsAction" method="{1}">
+			<result name="itemslist">/mansheetshow.jsp</result>
+			<result name="detailitems">/addCart.jsp</result>
+			<allowed-methods>inItemsList,goDetailItems</allowed-methods>
+		</action>
+		
+		<action name="cart_*" class="cartAction" method="{1}">
+			<!-- <interceptor-ref name="loginInterceptor">
+				<param name="excludeMethods">login,register</param>
+			</interceptor-ref> -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="addCart">/addCart.jsp</result>
+			<result name="lookCart">/mycart.jsp</result>
+			<allowed-methods>checkExistItems,saveCart,addCart,lookCart,deleCart,addCartNum,decCartNum,selSumCart,decSumCart</allowed-methods>
+		</action>
+		
+	</package>
+</struts>

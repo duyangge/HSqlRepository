@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,10 +22,12 @@ function SeacherGood(){
 </head>
 <body>
 	<div class="all">
-		<div class="header"><!--  头部内容-->			 	
-			<div class="logo"><!-- logo -->
-				<div class="logo_top"><a href="login.jsp">退出</a></div>
-				<c:if test="${empty name}">
+		<!--  头部内容-->
+		<div class="header">
+			<!-- logo -->			 	
+			<div class="logo">
+				<div class="logo_top"><a href="user_loginout.action">退出</a></div>
+				<c:if test="${empty user}">
 					<div class="logo_top">
 						<a href="resign.jsp">注册</a>&nbsp;
 						<span>|</span>
@@ -34,30 +37,28 @@ function SeacherGood(){
 						<a href="login.jsp" >你好，请登录</a>
 					</div>
 				</c:if>
-				<c:if test="${not empty name }">
+				<c:if test="${not empty user }">
 					<div class="logo_top">
 						<a href="#">
-							<c:out value="欢迎你回来,${name}"/>
+							<c:out value="欢迎你回来,${user.getUsername()}"/>
 						</a>
 					</div>
 				</c:if>
-				<div >
-				<a href="mansheetshow.jsp" class="logo_top_left">时尚商城
-				</a>
-				<a href="sum.jsp" class="logo_top_left">首页
-				</a>
+				<div>
+					<a href="mansheetshow.jsp" class="logo_top_left">时尚商城</a>
+					<a href="sum.jsp" class="logo_top_left">首页</a>
 				</div>
 			</div>
 			<div class="seacher_div"><!-- 搜索栏 -->
 			<div>
-					<image class="seacher_image" src="images/background/pxxy.jpg"/>
+					<img class="seacher_image" src="images/background/pxxy.jpg"/>
 			</div>
 			<div class="seacher_all">
 					<input class="seacher" type="text" name="shousuo" placeholder="输入你需要的物品" id="text_seacher"/>
 					<button class="btn_search" onclick="SeacherGood()">搜索</button>
 			</div>	
 			<div class="logo_car">
-					<a href="mycartgoodServlet?tablename=goods" class="shoppingcar_logo"><image class="" src="images/background/shoppingcar.png"/><font class="logo_car_buttle">我的购物车<%-- (<b><%=0%></b>) --%></font></a>
+					<a href="${pageContext.request.contextPath }/cart_lookCart.action" class="shoppingcar_logo"><image class="" src="images/background/shoppingcar.png"/><font class="logo_car_buttle">我的购物车<%-- (<b><%=0%></b>) --%></font></a>
 			</div>	
 			</div>
 			<div class="logo_list">

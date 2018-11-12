@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-07-04 09:48:17
+Date: 2018-11-11 14:20:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -79,6 +79,54 @@ INSERT INTO `goods` VALUES ('ms002', '男单鞋', '百丽', 'Belle/百丽秋季�
 INSERT INTO `goods` VALUES ('ms003', '皮鞋', '百丽', 'Belle/百丽秋季黑色牛皮男简约商务正装系带舒适德比鞋皮鞋', '488.0', '1220.0', 'images/sheetbandimage/mansheet/mansheet01/big03.png');
 INSERT INTO `goods` VALUES ('ms004', '豆豆鞋', '百丽', 'Belle/百丽春专柜同款黑色牛皮革男休闲鞋豆豆鞋3LQ01AM7', '368.0', '999.0', 'images/sheetbandimage/mansheet/mansheet01/big04.png');
 INSERT INTO `goods` VALUES ('ms005', '休闲鞋', '百丽', 'Belle/百丽秋季黑色牛皮男休闲鞋板鞋35702CM7', '428.0', '999.0', 'images/sheetbandimage/mansheet/mansheet01/big05.png');
+
+-- ----------------------------
+-- Table structure for item_cart
+-- ----------------------------
+DROP TABLE IF EXISTS `item_cart`;
+CREATE TABLE `item_cart` (
+  `cid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `gid` int(11) NOT NULL,
+  `gnum` int(11) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of item_cart
+-- ----------------------------
+INSERT INTO `item_cart` VALUES ('19', '20', '5', '2', '2018-11-04');
+INSERT INTO `item_cart` VALUES ('21', '16', '5', '1', '2018-11-04');
+INSERT INTO `item_cart` VALUES ('28', '16', '4', '1', '2018-11-07');
+INSERT INTO `item_cart` VALUES ('29', '16', '3', '1', '2018-11-07');
+INSERT INTO `item_cart` VALUES ('30', '16', '2', '1', '2018-11-07');
+
+-- ----------------------------
+-- Table structure for item_shoe
+-- ----------------------------
+DROP TABLE IF EXISTS `item_shoe`;
+CREATE TABLE `item_shoe` (
+  `gid` int(11) NOT NULL AUTO_INCREMENT,
+  `gname` varchar(255) DEFAULT NULL,
+  `gbrand` varchar(255) DEFAULT NULL,
+  `gintroduce` varchar(255) DEFAULT NULL,
+  `gprice` double DEFAULT NULL,
+  `imgsrc` varchar(255) DEFAULT NULL,
+  `cgid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`gid`),
+  KEY `FK7c2mp24i1d0j4xj9u3ubwsesq` (`cgid`),
+  CONSTRAINT `FK7c2mp24i1d0j4xj9u3ubwsesq` FOREIGN KEY (`cgid`) REFERENCES `item_cart` (`cid`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of item_shoe
+-- ----------------------------
+INSERT INTO `item_shoe` VALUES ('1', '男单鞋', '百丽', 'Belle/百丽秋季专柜同款黑色牛皮商务正装男单鞋3UX01CM5', '398', 'images/sheetbandimage/mansheet/mansheet01/big01.png', null);
+INSERT INTO `item_shoe` VALUES ('2', '皮鞋', '百丽', 'Belle/百丽秋季黑色牛皮男简约商务正装系带舒适德比鞋皮鞋', '488', 'images/sheetbandimage/mansheet/mansheet01/big02.png', null);
+INSERT INTO `item_shoe` VALUES ('3', '豆豆鞋', '百丽', 'Belle/百丽春专柜同款黑色牛皮革男休闲鞋豆豆鞋3LQ01AM7', '368', 'images/sheetbandimage/mansheet/mansheet01/big03.png', null);
+INSERT INTO `item_shoe` VALUES ('4', '休闲鞋', '百丽', 'Belle/百丽秋季黑色牛皮男休闲鞋板鞋35702CM7', '428', 'images/sheetbandimage/mansheet/mansheet01/big04.png', null);
+INSERT INTO `item_shoe` VALUES ('5', '豆豆鞋', '百丽', 'Belle/百丽秋季黑色牛皮男休闲鞋板鞋35702CM7', '548', 'images/sheetbandimage/mansheet/mansheet01/big05.png', null);
 
 -- ----------------------------
 -- Table structure for man_show
@@ -317,12 +365,12 @@ INSERT INTO `sport_show_title` VALUES ('1', '运动/户外馆', 'MORE', '运动�
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `uid` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `username` varchar(10) NOT NULL DEFAULT '',
   `password` varchar(50) NOT NULL DEFAULT '',
   `address` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='用户表';
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='用户表';
 
 -- ----------------------------
 -- Records of user
@@ -339,6 +387,9 @@ INSERT INTO `user` VALUES ('0000000012', '李园祥', '4QrcOUm6Wau+VuBX8g+IPg=='
 INSERT INTO `user` VALUES ('0000000013', '龚仕俊', '4QrcOUm6Wau+VuBX8g+IPg==', '123456@qq.com');
 INSERT INTO `user` VALUES ('0000000014', '刘超超', '4QrcOUm6Wau+VuBX8g+IPg==', '123456@qq.com');
 INSERT INTO `user` VALUES ('0000000015', 'jieke', '4QrcOUm6Wau+VuBX8g+IPg==', '2380110794@qq.com');
+INSERT INTO `user` VALUES ('0000000016', 'hxs', '123456', '2380110794@qq.com');
+INSERT INTO `user` VALUES ('0000000017', 'pxxy', '123456', '2380110794@qq.com');
+INSERT INTO `user` VALUES ('0000000020', '1', '000000', '544619865@qq.com');
 
 -- ----------------------------
 -- Table structure for writedetail

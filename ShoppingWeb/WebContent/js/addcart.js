@@ -1,7 +1,9 @@
-function add(){//增加数量
+function add( gid , uid){//增加数量
 	var num=parseInt(document.getElementById("number").value);
 	if(num<100){
 		document.getElementById("number").value=++num;
+		 window.location.href="${pageContext.request.contextPath }/cart_deleCart.action?gnum="
+			 +num+"&gid="+gid+"&uid="+uid;
 	}
 }
 function reduce(){//减少数量
@@ -35,16 +37,18 @@ function removeall(){
 	   return;
 	  }
 }
-function DelCart(){
+/*function DelCart(){
 	if(confirm("亲!\n\n您确认要从您的购物车的移出吗？")){
 	}else{
-		   history.back();
+		   history.back(-1);
 	}
-}
+}*/
 function GoOrder(){
 	alert("亲!\n\n您已下单成功");
 }
-
+function back(){
+	history.back();
+}
 function GoBack(){
 	if(confirm("亲!\n\n您确认要返回吗？")){
 		history.back();
@@ -72,7 +76,7 @@ function buygoods(){//立即下单
 	//	getUrlVars();
 		var grnum=myform.numbershowtext.value;
 		var grid=myform.itemidname.value;
-	 	window.location.href="NowBuysServlet?id="+grid+"&number="+grnum; 
+	 	window.location.href="NowBuysServlet?gid="+grid+"&number="+grnum; 
 	}else{
 		   return;
 		  }

@@ -1,9 +1,9 @@
-<%@page import="java.awt.SystemTray"%>
+<%-- <%@page import="java.awt.SystemTray"%> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="web.service.bean.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="users" class="web.service.bean.user" scope="session"/>   
+<%-- <jsp:useBean id="users" class="web.service.bean.user" scope="session"/>    --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,16 +11,16 @@
 <title>登录中</title>
 <link href="css/login.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
-function myReload() {
+/* function myReload() {
     document.getElementById("CreateCheckCode").src = document.getElementById("CreateCheckCode").src+"?nocache="+ new Date().getTime();
-  }
+  } */
 </script>
 </head>
 <body>
 <div class="login_all">
-	<jsp:include page="login_top.jsp"></jsp:include>
+	<jsp:include page="login_top.jsp"></jsp:include><!-- 登陆头部 -->
 	<div class="login_content">
-		<form action="LoginServlet" method="post" name="userlogin" id="login">
+		<form action="${pageContext.request.contextPath }/user_login.action" method="post" name="userlogin" id="login">
 			<div class="alllogin">
 			<c:remove var="name"/>
 				<div>
@@ -28,18 +28,18 @@ function myReload() {
 				</div>
 				<div class="input_login">
 					<div class="login">
-						<input class="text" type="text" id="username"  placeholder="输入用户名/手机号" name="user" autocomplete="off"/>
+						<input class="text" type="text" id="username"  placeholder="输入用户名/手机号" name="username" autocomplete="off"/>
 						<br/>
 						 <font class="mess">
-							<c:if test="${not empty mess}">
-								<c:out value="${mess}"/>
+							<c:if test="${not empty loginerror}">
+								<c:out value="${loginerror}"/>
 							</c:if>
 						</font>
 						<c:remove var="mess"/>
 					</div>
 					<br>
 					<div class="login">
-						<input class="textpass" id="password" type="password"  placeholder="输入密码" name="psword3">
+						<input class="textpass" id="password" type="password"  placeholder="输入密码" name="password">
 					</div>
 					<br>
 					<div>
