@@ -2,16 +2,15 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 <hibernate-mapping>
-	<class name="web.entity.Items" table="item_shoe">
+	<class name="web.entity.Items" table="items">
 		<id name="gid" column="gid">
 			<generator class="native"></generator>
 		</id>
+		<property name="tid"></property>
 		<property name="gname"></property>
 		<property name="gbrand"></property>
 		<property name="gintroduce"></property>
 		<property name="gprice"></property>
 		<property name="imgsrc"></property>
-		
-		<!-- <many-to-one name="cart" class="web.entity.Cart" column="cgid"></many-to-one> -->
 	</class>
 </hibernate-mapping>

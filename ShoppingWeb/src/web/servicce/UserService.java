@@ -5,15 +5,24 @@ import org.springframework.transaction.annotation.Transactional;
 import web.dao.UserDao;
 import web.entity.User;
 
-/** * @author   黄信胜* 
-@date 创建时间：2018年7月3日 上午11:13:27 *
- @version 1.0 *
- @parameter  *
- @since  *
- @return  */
-
+/**
+ * @author 黄信胜
+ * @date 2018年11月20日下午8:40:42
+ * @version 版本号
+ */
 @SuppressWarnings("all")
 public interface UserService {
-	 User login(User user) ;
-	 User register(User user) ;
+	/**
+	 * 登陆
+	 * @param user 用户对象
+	 * @return  用户对象
+	 */
+	User login(User user) ;
+	
+	/**
+	 * 注册 
+	 * @param user 用户对象
+	 * @return 用户对象
+	 */
+	User register(User user) ;
 }

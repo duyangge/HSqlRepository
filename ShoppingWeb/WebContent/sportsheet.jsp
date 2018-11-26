@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>运动商城</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <link href="css/goodShow.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>

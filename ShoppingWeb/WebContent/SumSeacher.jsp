@@ -6,11 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>搜索结果......</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <link href="css/goodShow.css" rel="stylesheet" type="text/css"/>
 <style type="text/css">
 .ss_all{
 	width:100%;
-	height:1000px;
+	height:100em;
 }
 .ss_top{
 	width:100%;
@@ -19,11 +20,11 @@
 .ss_content{
 	width:100%;
 	height:40%;
-	margin-left:10px;
+	margin-left:1em;
 }
 .head_hr{
-		margin-top:16px;
-		margin-button:10px;
+		margin-top:1.6em;
+		margin-button:1em;
 }
  .contentshow{
 	float:left;

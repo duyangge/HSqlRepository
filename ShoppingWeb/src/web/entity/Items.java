@@ -1,25 +1,31 @@
 package web.entity;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import web.service.dao.Connc3p0;
+/**
+ * @author 黄信胜
+ * @date 2018年11月20日下午8:38:07
+ * @version 版本号
+ */
 @SuppressWarnings("all")
-public class Items {
+public class Items implements Serializable{
+	private Integer tid;//商品类型id
 	private Integer  gid;//物品id
 	private String  gname;//名称
 	private String gbrand;//品牌
 	private String gintroduce;//介绍
 	private double  gprice;//价格
 	private String imgsrc;//图片路径
-/*	private Cart cart;//购物车
-	public Cart getCart() {
-		return cart;
+	public Integer getTid() {
+		return tid;
 	}
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}*/
+	public void setTid(Integer tid) {
+		this.tid = tid;
+	}
 	public String getImgsrc() {
 		return imgsrc;
 	}
@@ -58,8 +64,8 @@ public class Items {
 	}
 	@Override
 	public String toString() {
-		return "Items [gid=" + gid + ", gname=" + gname + ", gbrand=" + gbrand
-				+ ", gintroduce=" + gintroduce + ", gprice=" + gprice + "]";
+		return "Items [tid=" + tid + ", gid=" + gid + ", gname=" + gname + ", gbrand=" + gbrand + ", gintroduce="
+				+ gintroduce + ", gprice=" + gprice + ", imgsrc=" + imgsrc + "]";
 	}
 	
 }

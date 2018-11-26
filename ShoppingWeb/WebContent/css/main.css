@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* 1em=12pt=16px=100%
+	1px=0.0625em;
+	1pt=0.083em;
+ */
+ /* 
+ body:font-size:64%;
+ 12px=1.2em;
+ 1em=10px
+ 1px=0.1em;
+ 1pt=1.3px=0.13em;
+  */
+body{
+	font-size:62%;
+}

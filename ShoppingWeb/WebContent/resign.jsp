@@ -7,6 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>user-resgin</title>
 	<link href="css/regiter.css" rel="stylesheet" type="text/css"/>
+	<link href="css/main.css" type="text/css" rel="stylesheet"/>
 	<!-- <script type="text/javascript">
 	/*1.创建xmlHTTpRequest对象createxmlHttpRequest()
 	 * 2.利用open方法创建于服务器的连接

@@ -7,14 +7,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>添加商品</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <link href="css/addcart.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-<form action="${pageContext.request.contextPath }/cart_addCart.action" method="post"><!--先不提交cartServlet  -->
+<form action="${pageContext.request.contextPath }/cart_addCart.action" method="post">
 <!--通过获取物品id得到物品信息  -->
 	<div class="content">
 		<div class="content_left">
-			<img src="${detailItems.getImgsrc()}" />
+			<img src="${detailItems.getImgsrc()}" class="imgshow"/>
 		</div>
 		<div class="content_right">
 				<div>
@@ -47,8 +48,9 @@
 				<!-- 选择商品的数量 -->
 					<table class="shownumber">
 						<tr>
+							<td id="goodnametitle">数量 </td>
 							<td><input type="button" name="addnumber" value="+" onclick="add()"></td>
-							<td><input type="text" name="gnum" value="1" id="number" readonly="true" style="width:20px;"></td>
+							<td><input type="text" name="gnum" value="1" id="number" readonly="readonly" style="width:20px;"></td>
 							<td><input type="button" name="reducenumber" value="-" onclick="reduce()"></td>
 						</tr>
 					</table>
@@ -58,20 +60,19 @@
 	<!-- 加入购物车和立即购买两个按钮事件 -->
 	<div class="content_button">
 		<!--将商品添加到购物车  -->
-		<input type="hidden" name="uid" value="${user.getUid()}"/>
-		<input type="hidden" value="${detailItems.getGid()}"  name="gid"/>
-		<!--判断用户名是否为空  -->
-		<input type="hidden" name="username" value="${user.getUsername()}" id="username"/>
-		<input type="hidden" name="tablename" value="<c:out value="${tablename}"/>"/>
+		<input type="hidden" name="uid" value="${user.getUid()}" id="uid"/>
+		<input type="hidden" value="${detailItems.getGid()}"  name="gid" id="gid"/>
+		<input type="hidden" value="${detailItems.getGprice()}"  name="unitprice" id="unitprice"/>
 		<input type="submit" name="addcart" value="加入购物车" id="addcartbutton" onclick="addCart()">
-		<input type="button" name="buy" value="立即下单"  onclick="buygoods()" id="buybutton"/>
+		<input type="button" name="buy" value="立即下单"  onclick="instantbuy()" id="buybutton"/>
 	</div>
 	<div class="all_buttom">
 		<a href="${pageContext.request.contextPath }/cart_lookCart.action" class="lookcar">查看购物车</a>
-		<a href="mansheetshow.jsp" class="continueshopping">继续购物</a>
+		<a href="ShowListItems.jsp" class="continueshopping">继续购物</a>
+		<a href="${pageContext.request.contextPath }/user_loginout.action">退出</a>
 	</div>
 	</form>
 </body>
 <script type="text/javascript" src="js/addcart.js">
-</script>
+</script> 
 </html>

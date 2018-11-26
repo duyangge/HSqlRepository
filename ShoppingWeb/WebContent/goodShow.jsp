@@ -7,14 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="css/goodShow.css" type="text/css" rel="stylesheet"/>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 	<div class="mansheetcontent_all">
 		<jsp:include page="mansheet_show.jsp" ></jsp:include>
 		<jsp:include page="sportsheet_show.jsp"></jsp:include>
-		<%-- <jsp:forward page="${pageContext.request.contextPath }/mansheet_show.jsp"></jsp:forward>
-		<jsp:forward page="${pageContext.request.contextPath }/sportsheet_show.jsp"></jsp:forward> --%>
-	</div>
+		</div>
 </body>
 </html>
 		

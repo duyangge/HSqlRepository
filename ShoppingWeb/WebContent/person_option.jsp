@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript">
 function back(){
 	history.back();
@@ -14,11 +15,11 @@ function back(){
 </script>
 <style type="text/css">
 .contentlist{
-	margin-top:40px;
+	margin-top:4em;
 }
 a{
 	font-family:"华文宋体";
-	font-size:13pt;
+	font-size:1.69em;
 	font-weight:bold;
 	text-decoration:none;
 }"WebContent/person_option.jsp"

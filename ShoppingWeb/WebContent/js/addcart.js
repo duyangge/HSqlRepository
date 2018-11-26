@@ -1,3 +1,45 @@
+
+function instantbuy(){
+	if(confirm("亲!\n\n您确认是否下单，下单须填写详细信息")){
+			//检查是否填写收货信息
+			var gnum=document.getElementById("number").value;//
+			var gid=document.getElementById("gid").value;//
+			var unitprice=document.getElementById("unitprice").value;//
+			var allMoney=unitprice*gnum;//
+			window.location.href="${pageContext.request.contextPath}/orders_addOrders.action?gid="+gid+"&gnum="+gnum+"&allMoney="+allMoney; 
+		}else{return;}
+}
+
+function pitchon() {
+	var bb = "";
+	var temp = "";
+	var a = document.getElementsByName("gidlist");
+	for ( var i = 0; i < a.length; i++) {
+		if (a[i].checked) {
+			temp = a[i].value;
+			bb = bb + "," +temp;
+		}
+	}
+	if(bb == "" || bb.length == 0){
+		alert("请勾选需要的资源项!");
+		return;
+	}
+	var gnum=document.getElementById("number").value;//
+	var gid=document.getElementById("gid").value;//
+	var unitprice=document.getElementById("unitprice").value;//
+	var allMoney=unitprice*gnum;//
+	//String [] gidlist=bb.split(",");
+	window.location.href="${pageContext.request.contextPath}/orders_addOrders.action?gid="+gid+"&gnum="+gnum+"&allMoney="+allMoney+"&gidlist="+bb; 
+	//window.location.href="${pageContext.request.contextPath}/cart_lookCart.action";
+	}
+function allSelect(){
+	var a = document.getElementsByName("gidlist");
+	for ( var i = 0; i < a.length; i++) {
+		if (!a[i].checked) {
+			a[i].checked=true;
+		}
+	}
+}
 function add( gid , uid){//增加数量
 	var num=parseInt(document.getElementById("number").value);
 	if(num<100){

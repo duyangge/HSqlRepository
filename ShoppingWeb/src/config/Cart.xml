@@ -26,7 +26,11 @@
         <!--配置action  -->
         <bean id="cartAction" class="web.action.CartAction" scope="prototype">
         	<property name="cartService" ref="cartService"></property>
+        	<property name="showPage" ref="showPage"></property>
         </bean>
+        
+        <!--分页实体类  -->
+        <bean id="showPage" class="web.Intermediate.ShowPage"></bean>
   
         
         

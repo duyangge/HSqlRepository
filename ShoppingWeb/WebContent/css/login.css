@@ -1,6 +1,6 @@
 .login_all{
 	width:100%;
-	height:650px;
+	height:65em;
 }
 .login_top{
 	height:13%;
@@ -10,16 +10,17 @@
 }
 .login_top_title{
 	float:right;
-	margin-buttom:2px;
+	margin-buttom:0.2em;
+	font-size:1.5em;
 }
 .login_top_title a{
 	text-decoration:none;
 	color:black;
 	font-family:"华文仿宋";
-	font-size:13pt;
+	font-size:0.066em;/* 13pt */
 }
 .login_content{
-	height:580px;
+	height:58em;
 	width:100%;
 	text-align:center;
 	background-image:url(../images/background/sheet.jpg);
@@ -31,11 +32,11 @@
 	height:10%;
 }
 .button{
-	height:37px;
-	width:365px; 
+	height:3.7em;
+	width:36.5em; 
 	background:#ffff00;
 	border:none;
-	border-radius:5px;	
+	border-radius:0.5em;	
 }		
 .button:active{
 	background:#ff8040;
@@ -48,23 +49,26 @@
 	font-weight;bold;
 }
 .text,.textpass{
-	height:40px;
-	width:300px;
+	height:4em;
+	width:30em;
 	border-left:none;
 	border-top:none;
 	border-right:none;
-	padding-left:70px;	
+	padding-left:7em;	
 }
-h2{
-	margin-right:200px;
+.login_title{
+	font-size:3em;
+	text-align:center;
+	margin-top:1em;
+	margin-right:6em;
 }
 .text,.button,,.textpass{
-	margin-right:50px;
-	border-radius:5px;
+	margin-right:5em;
+	border-radius:0.5em;
 }
 .logo_top a{
 	text-decoration:none;	
-	font-size:15px;	
+	font-size:1.5em;	
 	font-weight:bold;
 }
 .text{
@@ -74,32 +78,57 @@ h2{
 	background:url(../images/background/suo.png) no-repeat 0 center;
 }
 .alllogin{
-	margin-top:70px;
-	width:430px;
-	height:350px;
+	margin-top:7em;
+	width:38em;
+	height:30em;
 	float:right;
 	background:hsla(0,0%,100%,1);
 	text-align:right;
-	border-radius:5px;	
-	margin-right:20px;
+	border-radius:0.5em;	
+	margin-right:2em;
 	opacity:1;
 }
 
 .input_login{
-	margin-right:50px;
+	margin-right:5em;
 }
 
 .login_resign{
 	text-decoration:none;
 	color:black; 
 	font-family:"华文仿宋";
-	/* font-style:italic; */
-	font-size:10pt;
+	font-size:1.3em;/* 10pt */
 }
 .mess{
 	color:red;
-	font-size:12px;
+	font-size:1.2em;
 	font-weight:bold;
 }
 
-
+#username,#password{
+	text-align:center;
+	height:3em;
+	width:25em;
+	margin-left:0.3em;
+}
+#button_login{
+	height:3em;
+	width:31.5em;
+	text-align:center;
+	margin-top:1em;
+	
+}
+.validcode{
+	float:left;
+	margin-left:0.8em;
+}
+.div_button_login{
+	text-align:center;
+	margin-left:0.3em;
+}
+.div_login_title{
+	margin-bottom: 2em;
+}
+.div_login_bottom{
+	margin-bottom: 0.2em;
+}

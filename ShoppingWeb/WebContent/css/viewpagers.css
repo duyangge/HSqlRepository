@@ -2,28 +2,28 @@ img{
 	width;100%;
 }
 #li_img{
-	width:800px;
+	width:80em;
 	float:left;
 	list-style:none;
 }
 #ul_img{
-	width:6000px;
-	padding:0px;
-	margin:0px;
+	width:600em;
+	padding:0em;
+	margin:0em;
 	transition:all 2s;
 }
 #main_div{
-	width:800px;
+	width:80em;
 	overflow:hidden;
 	position: relative;
-	top:100px;
-	left:350px;
+	top:10em;
+	left:35em;
 }
 #arrows{
 	z-index:9999;
 	position:absolute;
-	padding-top:230px;
-	width:800px;
+	padding-top:23em;
+	width:80em;
 }
 #arrows span{
 	font-size:3em;
@@ -36,12 +36,12 @@ img{
 }
 #div_btn{
 	float:left;
-	border-radius:100px;
+	border-radius:10em;
 	background-color:aquamarine;
-	width:60px;
-	height:10px;
-	margin-left:10px;
-	margin-top:130px;
+	width:6em;
+	height:1em;
+	margin-left:1em;
+	margin-top:13em;
 }
 #div_btn:hover{
 	background-color:aqua;

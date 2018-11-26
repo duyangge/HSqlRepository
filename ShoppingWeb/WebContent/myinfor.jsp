@@ -5,17 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>个人信息</title>
-<!-- <style type="text/css">
-.infor_all{
-	width:100%;
-	height:100%;
-}
-.infor_my{
-	 position:relative;
-	 left:50%;
-	 top:50%;
-}
-</style> -->
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 	<div class="infor_all">

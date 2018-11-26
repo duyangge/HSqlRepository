@@ -8,6 +8,10 @@
 		</id>
 		<property name="username"></property>
 		<property name="password"></property>
-		<property name="address"></property>
+		<property name="mail"></property>
+		<set name="orders" cascade="all">
+			<key column="uid"></key>
+			<one-to-many class="web.entity.Orders"/>
+		</set>
 	</class>
 </hibernate-mapping>

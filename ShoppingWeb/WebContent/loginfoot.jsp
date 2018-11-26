@@ -8,14 +8,14 @@
 <style>
 span{
 	font-family:"华文新魏";
-	font-size:11pt;
+	font-size:1.43em;/* 11pt */
 	color:black;
-	font-size:11pt;
+	font-size:1.43em;/* 11pt */
 }
 a{
 text-decoration:none;
 color:#808080;
-font-size:10pt;
+font-size:1.3em;/*10pt  */
 }
 pre{
 text-align:center;
@@ -25,6 +25,7 @@ font-weight:bold;
 text-align:center;
 }
 </style>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 	<div class="foot"><!--尾部结束  -->

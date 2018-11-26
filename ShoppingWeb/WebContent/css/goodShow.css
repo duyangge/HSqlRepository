@@ -1,38 +1,38 @@
 @charset "UTF-8";
 .mansheetcontent_all{
-	margin-top:30px;
+	margin-top:3em;
 	width:100%;
-	height:900px;
+	height:90em;
 }
 .mansheet{
-	border: 1px solid #efefef;
+	border: 0.1em solid #efefef;
 	border-top:none;
-	height:478px;
+	height:47.8em;
 	width:100%;
 }
 .mansheet_band_title{
 	background:black;
 	color:white;
-	width:50px;
-	height:50px;
-	border: 1px solid white;
+	width:5em;
+	height:5em;
+	border: 0.1em solid white;
 }
 .mansheet_title_left{
 	font-weight:bold;
 	color:block;
-	font-size:20px;
+	font-size:2em;
 }
 .mansheet_title_right{
 	float:right;
 	background:black;
 	color:white;
-	font-size:20px;
+	font-size:2em;
 	font-weight:bold;
 	
 }
 .mansheet_band{
-	margin:0px auto;
-	margin-left:5px;
+	margin:0em auto;
+	margin-left:0.5em;
 }
 .mansheet_band_logo{
 	float:left;
@@ -40,8 +40,8 @@
 }
 .mansheet_image{
 	float:left;
-	margin-left:20px;
-	margin-right:5px;
+	margin-left:2em;
+	margin-right:0.5em;
 	width:25%;
 }
 .mansheet_image_text_div{
@@ -49,12 +49,12 @@
 }
 .mansheet_show{
 	float:right;
-	margin-right:10px;
+	margin-right:1em;
 	width:40%;
 "F:/desktop/hibernate思维导图.png"	
 }
 .mansheet_show_line{
-	border:1px solid black;
+	border:0.1em solid black;
 	color:black;
 }
 .personalshow_introduce{
@@ -85,13 +85,12 @@
 .sportsheet{
 	float:left;
 	width:100%;
-	border: 1px solid #efefef;
+	border: 0.1em solid #efefef;
 	border-top:none;
-	margin-top:35px;
+	margin-top:3.5em;
 }
 .mansheet_image{
-	/* background:#fff; */
-	border:0px solid #efefef;
+	border:0em solid #efefef;
 }
 .sheetimage_text_a{
 	text-decoration:none;

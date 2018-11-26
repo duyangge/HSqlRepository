@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>购物尾部</title>
 <link href="css/sum.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 			<div class="foot"><!--尾部结束  -->

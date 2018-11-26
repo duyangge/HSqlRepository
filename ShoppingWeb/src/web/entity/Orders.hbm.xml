@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="web.entity.Orders" table="item_orders">
+		<id name="rid" column="rid">
+			<generator class="native"></generator>
+		</id>
+		<property name="date"></property>
+		<property name="gnum"></property>
+		<property name="allMoney"></property>
+		<property name="orderStatus"></property>
+	    <many-to-one name="user" class="web.entity.User" column="uid"></many-to-one>
+	</class>
+</hibernate-mapping>

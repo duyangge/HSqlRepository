@@ -9,9 +9,16 @@
 			<property name="hibernate.format_sql">true</property>
 			<property name="hibernate.hbm2ddl.auto">update</property>
 			<!-- <property name="hibernate.current_session_context_class">thread</property> -->
-	<!-- org.springframework.orm.hibernate5.SpringSessionContext -->
-			<mapping resource="web/entity/User.hbm.xml"/>
+			<property name="hibernate.enable_lazy_load_no_trans">true</property><!--懒加载  -->
+			<property name="javax.presistence.validation.mode">none</property><!--实体类验证  -->
+			<!-- 在applicationContext中批量导入 -->
+			<!-- <mapping resource="web/entity/User.hbm.xml"/>
 			<mapping resource="web/entity/Items.hbm.xml"/>
 			<mapping resource="web/entity/Cart.hbm.xml"/>
+			<mapping resource="web/entity/Orders.hbm.xml"/>
+			<mapping resource="web/entity/ShippingAddress.hbm.xml"/>
+			<mapping resource="web/entity/ItemsType.hbm.xml"/>
+			<mapping resource="web/entity/ItemsBrand.hbm.xml"/>
+			<mapping resource="web/entity/ItemsShowText.hbm.xml"/> -->
 		</session-factory>
 	</hibernate-configuration>

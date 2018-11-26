@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="web.entity.ShippingAddress" table="item_shippingaddress">
+		<id name="aid" column="aid">
+			<generator class="native"></generator>
+		</id>
+		<property name="uid"></property>
+		<property name="consignee"></property>
+		<property name="phone"></property>
+		<property name="postcode"></property>
+		<property name="remark"></property>
+		<property name="shippingaddress"></property>
+	</class>
+</hibernate-mapping>

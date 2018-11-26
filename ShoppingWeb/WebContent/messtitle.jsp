@@ -5,9 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <style type="text/css">
 h2{
-	font-size:25px;
+	font-size:2.5em;
 	text-aglin:center;
 	color:blue;
 }

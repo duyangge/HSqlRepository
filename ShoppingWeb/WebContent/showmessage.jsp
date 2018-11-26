@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查看留言板</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="css/showMessPane.css">
 </head>
 <body>

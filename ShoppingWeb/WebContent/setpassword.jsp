@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>修改密码</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <style type="text/css">
 .ps.all{
 	width:450px; 

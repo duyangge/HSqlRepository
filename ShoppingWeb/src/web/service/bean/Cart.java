@@ -3,7 +3,12 @@ package web.service.bean;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-
+/**
+ * @author 黄信胜
+ * @date 2018年11月20日下午8:56:23
+ * @version 版本号
+ */
+@SuppressWarnings("all")
 public class Cart {
 	
 	private HashMap<Items,Integer> goods;//购物车商品的集合,键值对，一件商品对应着它的数量

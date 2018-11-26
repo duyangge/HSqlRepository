@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录中</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <link href="css/login.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
 /* function myReload() {
@@ -23,8 +24,8 @@
 		<form action="${pageContext.request.contextPath }/user_login.action" method="post" name="userlogin" id="login">
 			<div class="alllogin">
 			<c:remove var="name"/>
-				<div>
-					<h2>Sign In</h2>
+				<div class="div_login_title">
+					<font class="login_title" >Sign In</font>
 				</div>
 				<div class="input_login">
 					<div class="login">
@@ -42,17 +43,17 @@
 						<input class="textpass" id="password" type="password"  placeholder="输入密码" name="password">
 					</div>
 					<br>
-					<div>
-						<input type="text" name="checkCode" style="width:70px;height:35px;"> 
-						<img src="<c:out value='PCCode'/>" id="CreateCheckCode" align="middle" style="margin-top:-10px;"> 
-						<a href="#" onclick="myReload()" style="font-size:12px;color:red;margin-left:100px;"> 看不清,换一个</a>	
+					<div class="validcode">
+						<input type="text" name="checkCode" style="width:7em;height:3.5em;"> 
+						<img src="<c:out value='PCCode'/>" id="CreateCheckCode" align="middle" style="margin-top:-1em;"> 
+						<a href="#" onclick="myReload()" style="font-size:1.2em;color:red;margin-left:10em;"> 看不清,换一个</a>	
 					</div>
 					<br>
-					<div>
-						<input class="button" type="button"  name="login" value="LOGIN" onclick="return reformsheet()">	
+					<div class="div_button_login">
+						<input class="button" type="button"  id="button_login" name="login" value="LOGIN" onclick="return reformsheet()">	
 					</div>
 					<br>
-					<div>
+					<div class="div_login_bottom">
 						<a href="setpassword.jsp" class="login_resign">忘记密码</a>
 						<a href="resign.jsp" class="login_resign">免费注册</a>
 					</div>

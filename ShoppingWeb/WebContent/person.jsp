@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 </head>
 <frameset rows="90,*">
 		<frame name="content_top" src="login_top.jsp" scrolling="no" frameborder="0">

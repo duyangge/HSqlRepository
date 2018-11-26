@@ -4,66 +4,66 @@
 
 #_start {
 	/*position:absolute;*/
-	height: 0px;
-	width: 0px;
+	height: 0em;
+	width: 0em;
 	background: #D6E9C6;
 	color: white;
 	text-align: center;
-	line-height: 40px;
+	line-height: 4em;
 }
 
 #_close {
 	float: right;
-	height: 0px;
-	width: 0px;
+	height: 0em;
+	width: 0em;
 	background: none;
 	color: white;
-	border-left: 1px solid white;
-	border-bottom: 1px solid white;
+	border-left: 0.1em solid white;
+	border-bottom: 0.1em solid white;
 	text-align: center;
-	line-height: 40px;
+	line-height: 4em;
 	cursor: pointer;
 }
 
 #login_container,#regist_container {
-	width: 360px;
+	width: 36em;
 	text-align: center;
 	display: none;
-	margin-top: 30px;
+	margin-top: 3em;
 }
 
 #lab1 {
-	width: 330px;
-	border-bottom: 1px solid #000000;
+	width: 33em;
+	border-bottom: 0.1em solid #000000;
 	text-align: left;
 	font-family: '微软雅黑';
 }
 
 #lab_login {
-	font-size: 30px;
-	height: 40px;
+	font-size: 3em;
+	height: 4em;
 	color: #000000;
 }
 
 #lab_toRegist,#lab_toLogin {
-	font-size: 15px;
-	line-height: 55px;
+	font-size: 1.5em;
+	line-height: 5.5em;
 	float: right;
 	color: #000000;
 }
 
 #lab_type1,
 #lab_type2 {
-	font-size: 16px;
+	font-size: 1.6em;
 	float: left;
 	color: #8C8C8C;
 }
 
 #login_number,
 #login_password {
-	height: 50px;
+	height: 5em;
 	border-radius: 0;
-	margin-top: 10px;
+	margin-top: 1em;
 }
 
 /* 注册表单 开始 */
@@ -73,12 +73,12 @@
 #regist_phone,
 #regist_vcode
 {
-	height: 42px;
+	height: 4.2em;
 	border-radius: 0;
-	margin-top: 5px;
+	margin-top: 0.5em;
 }
 #regist_vcode{
-	width:200px;
+	width:20em;
 	display: inline-block;
 	float: left;
 }
@@ -86,58 +86,58 @@
 
 /*获取验证码*/
 #getVCode{
-	width:125px;
-	height: 40px;
+	width:12.5em;
+	height: 4em;
 	border-radius: 0;
-	margin-top: 6px;
+	margin-top: 0.6em;
 	float: right;
 }
 /*登陆按钮*/
 #login_btn {
 	float: left;
-	width: 100px;
-	height: 40px;
+	width: 10em;
+	height: 4em;
 	border-radius: 0;
-	margin-top: 20px;
+	margin-top: 2em;
 }
 /*注册按钮*/
 #regist_btn{
-	width: 330px;
-	height: 40px;
+	width: 33em;
+	height: 4em;
 	border-radius: 0;
-	margin-top: 20px;
+	margin-top: 2em;
 }
 /*记住密码，找回密码*/
 #rememberOrfindPwd {
 	display: inline-block;
-	height: 40px;
-	line-height: 70px;
-	margin-top: 15px;
+	height: 4em;
+	line-height: 7em;
+	margin-top: 1.5em;
 	float: right;
 }
 /*QQ登陆样式*/
 #login_QQ {
-	width: 150px;
-	height: 40px;
+	width: 15em;
+	height: 4em;
 	float: left;
 	border-radius: 0;
 }
 /*微博登陆样式*/
 #login_WB {
-	width: 150px;
-	height: 40px;
+	width: 15em;
+	height: 4em;
 	float: right;
 	border-radius: 0;
 }
 /*登陆表单容器*/
 #form_container1 {
-	width: 330px;
-	height: 240px;
-	border-bottom: 1px solid #FFFFFF;
+	width: 33em;
+	height: 24em;
+	border-bottom: 0.1em solid #FFFFFF;
 }
 /*注册表单容器*/
 #form_container2 {
-	width: 330px;
-	height: 300px;
-	border-bottom: 1px solid #FFFFFF;
+	width: 33em;
+	height: 30em;
+	border-bottom: 0.1em solid #FFFFFF;
 }

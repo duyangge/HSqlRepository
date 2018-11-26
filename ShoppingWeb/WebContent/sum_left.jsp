@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <link href="css/sum.css" rel="stylesheet" type="text/css">
 </head>
 <body>

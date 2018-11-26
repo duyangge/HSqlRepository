@@ -5,13 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/main.css" type="text/css" rel="stylesheet"/>
 <style type="text/css">
 .contentlist{
-	margin-top:40px;
+	margin-top:4em;
 }
 a{
 	font-family:"华文宋体";
-	font-size:13pt;
+	font-size:1.73em;/* 13pt */
 	font-weight:bold;
 	text-decoration:none;
 }
@@ -28,6 +29,7 @@ function fanhui(){
 	history.back();
 }
 </script>
+
 </head>
 <body>
 	<div align="center">
