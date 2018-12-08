@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-11-26 22:48:10
+Date: 2018-12-08 20:57:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,22 +27,25 @@ CREATE TABLE `items` (
   `gintroduce` varchar(255) DEFAULT NULL,
   `gprice` double DEFAULT NULL,
   `imgsrc` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`gid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+  `items_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`gid`),
+  KEY `items_id` (`items_id`),
+  CONSTRAINT `items_id` FOREIGN KEY (`items_id`) REFERENCES `items` (`gid`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of items
 -- ----------------------------
-INSERT INTO `items` VALUES ('1', '1', '男单鞋', '百丽', 'Belle/百丽秋季专柜同款黑色牛皮商务正装男单鞋3UX01CM5', '398', 'images/sheetbandimage/mansheet/mansheet01/big01.png');
-INSERT INTO `items` VALUES ('2', '1', '皮鞋', '百丽', 'Belle/百丽秋季黑色牛皮男简约商务正装系带舒适德比鞋皮鞋', '488', 'images/sheetbandimage/mansheet/mansheet01/big02.png');
-INSERT INTO `items` VALUES ('3', '1', '豆豆鞋', '百丽', 'Belle/百丽春专柜同款黑色牛皮革男休闲鞋豆豆鞋3LQ01AM7', '368', 'images/sheetbandimage/mansheet/mansheet01/big03.png');
-INSERT INTO `items` VALUES ('4', '1', '休闲鞋', '百丽', 'Belle/百丽秋季黑色牛皮男休闲鞋板鞋35702CM7', '428', 'images/sheetbandimage/mansheet/mansheet01/big04.png');
-INSERT INTO `items` VALUES ('5', '1', '豆豆鞋', '百丽', 'Belle/百丽秋季黑色牛皮男休闲鞋板鞋35702CM7', '548', 'images/sheetbandimage/mansheet/mansheet01/big05.png');
-INSERT INTO `items` VALUES ('6', '2', 'TEE-CNT恤', '耐克', 'Nike耐克2018年新款男子AS M NSW COUNTRY TEE-CNT恤AQ5189-100', '189', 'images/cloths/na001.png');
-INSERT INTO `items` VALUES ('7', '2', 'ICON FUTURAT恤', '耐克', 'NIKE耐克2018年新款男子AS M NSW TEE ICON FUTURAT恤696708-10', '199', 'images/cloths/na002.png');
-INSERT INTO `items` VALUES ('8', '2', 'HBRT恤', '耐克', 'NIKE耐克2018年新款女子AS W NSW TEE CREW JDI SWSH HBRT恤889404-010', '169', 'images/cloths/na003.png');
-INSERT INTO `items` VALUES ('9', '2', ' HOODY运动衫', '阿迪三叶草', 'adidas Originals阿迪三叶草2018男子TREFOIL HOODY运动衫CX1900', '369', 'images/cloths/na004.png');
-INSERT INTO `items` VALUES ('10', '2', 'TEE圆领短T恤', '阿迪达斯', 'adidas阿迪达斯2018男子COMM M TEE圆领短T恤CW3589', '169', 'images/cloths/na005.png');
+INSERT INTO `items` VALUES ('1', '1', '男单鞋', '百丽', 'Belle/百丽秋季专柜同款黑色牛皮商务正装男单鞋3UX01CM5', '398', 'images/sheetbandimage/mansheet/mansheet01/big01.png', null);
+INSERT INTO `items` VALUES ('2', '1', '皮鞋', '百丽', 'Belle/百丽秋季黑色牛皮男简约商务正装系带舒适德比鞋皮鞋', '488', 'images/sheetbandimage/mansheet/mansheet01/big02.png', null);
+INSERT INTO `items` VALUES ('3', '1', '豆豆鞋', '百丽', 'Belle/百丽春专柜同款黑色牛皮革男休闲鞋豆豆鞋3LQ01AM7', '368', 'images/sheetbandimage/mansheet/mansheet01/big03.png', null);
+INSERT INTO `items` VALUES ('4', '1', '休闲鞋', '百丽', 'Belle/百丽秋季黑色牛皮男休闲鞋板鞋35702CM7', '428', 'images/sheetbandimage/mansheet/mansheet01/big04.png', null);
+INSERT INTO `items` VALUES ('5', '1', '豆豆鞋', '百丽', 'Belle/百丽秋季黑色牛皮男休闲鞋板鞋35702CM7', '548', 'images/sheetbandimage/mansheet/mansheet01/big05.png', null);
+INSERT INTO `items` VALUES ('6', '2', 'TEE-CNT恤', '耐克', 'Nike耐克2018年新款男子AS M NSW COUNTRY TEE-CNT恤AQ5189-100', '189', 'images/cloths/na001.png', null);
+INSERT INTO `items` VALUES ('7', '2', 'ICON FUTURAT恤', '耐克', 'NIKE耐克2018年新款男子AS M NSW TEE ICON FUTURAT恤696708-10', '199', 'images/cloths/na002.png', null);
+INSERT INTO `items` VALUES ('8', '2', 'HBRT恤', '耐克', 'NIKE耐克2018年新款女子AS W NSW TEE CREW JDI SWSH HBRT恤889404-010', '169', 'images/cloths/na003.png', null);
+INSERT INTO `items` VALUES ('9', '2', ' HOODY运动衫', '阿迪三叶草', 'adidas Originals阿迪三叶草2018男子TREFOIL HOODY运动衫CX1900', '369', 'images/cloths/na004.png', null);
+INSERT INTO `items` VALUES ('10', '2', 'TEE圆领短T恤', '阿迪达斯', 'adidas阿迪达斯2018男子COMM M TEE圆领短T恤CW3589', '169', 'images/cloths/na005.png', null);
 
 -- ----------------------------
 -- Table structure for item_brand
@@ -53,7 +56,7 @@ CREATE TABLE `item_brand` (
   `tid` int(11) DEFAULT NULL,
   `imageSrc` varchar(255) NOT NULL,
   PRIMARY KEY (`bid`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of item_brand
@@ -99,14 +102,13 @@ INSERT INTO `item_cart` VALUES ('19', '20', '5', '2', '2018-11-04');
 INSERT INTO `item_cart` VALUES ('21', '16', '5', '1', '2018-11-04');
 INSERT INTO `item_cart` VALUES ('28', '16', '4', '2', '2018-11-07');
 INSERT INTO `item_cart` VALUES ('29', '16', '3', '1', '2018-11-07');
-INSERT INTO `item_cart` VALUES ('30', '16', '2', '1', '2018-11-07');
 INSERT INTO `item_cart` VALUES ('31', '20', '4', '3', '2018-11-14');
 INSERT INTO `item_cart` VALUES ('35', '20', '3', '1', '2018-11-16');
 INSERT INTO `item_cart` VALUES ('36', '20', '2', '1', '2018-11-16');
 INSERT INTO `item_cart` VALUES ('37', '20', '1', '1', '2018-11-16');
 INSERT INTO `item_cart` VALUES ('38', '20', '6', '1', '2018-11-22');
 INSERT INTO `item_cart` VALUES ('39', '16', '8', '1', '2018-11-22');
-INSERT INTO `item_cart` VALUES ('40', '16', '9', '3', '2018-11-22');
+INSERT INTO `item_cart` VALUES ('40', '16', '9', '1', '2018-11-22');
 INSERT INTO `item_cart` VALUES ('41', '16', '7', '1', '2018-11-22');
 INSERT INTO `item_cart` VALUES ('42', '20', '8', '1', '2018-11-22');
 INSERT INTO `item_cart` VALUES ('43', '20', '10', '1', '2018-11-22');
@@ -173,16 +175,16 @@ INSERT INTO `item_imgintro` VALUES ('14', '1', '卡特', '潮品工装', 'images
 -- ----------------------------
 DROP TABLE IF EXISTS `item_orders`;
 CREATE TABLE `item_orders` (
-  `rid` int(11) NOT NULL AUTO_INCREMENT,
-  `date` datetime DEFAULT NULL,
-  `allMoney` double DEFAULT NULL,
-  `orderStatus` int(11) DEFAULT '0',
-  `uid` int(10) unsigned zerofill NOT NULL,
-  `gnum` int(11) DEFAULT NULL,
+  `rid` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单id',
+  `date` datetime DEFAULT NULL COMMENT '订单时间',
+  `allMoney` double DEFAULT NULL COMMENT '订单总价',
+  `orderStatus` int(11) DEFAULT '0' COMMENT '付款状态：1：付款；0：未付款',
+  `uid` int(10) unsigned zerofill NOT NULL COMMENT '用户id',
+  `gnum` int(11) DEFAULT NULL COMMENT '商品总数量',
   PRIMARY KEY (`rid`),
   KEY `FKn367werbny7e0ty1mcssywslp` (`uid`),
   CONSTRAINT `FKn367werbny7e0ty1mcssywslp` FOREIGN KEY (`uid`) REFERENCES `user` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of item_orders
@@ -191,6 +193,25 @@ INSERT INTO `item_orders` VALUES ('1', '2018-11-22 21:09:00', '369', '0', '00000
 INSERT INTO `item_orders` VALUES ('2', '2018-11-22 21:16:46', '369', '0', '0000000020', '1');
 INSERT INTO `item_orders` VALUES ('3', '2018-11-22 21:18:25', '369', '0', '0000000020', '1');
 INSERT INTO `item_orders` VALUES ('4', '2018-11-22 21:19:59', '369', '0', '0000000020', '1');
+INSERT INTO `item_orders` VALUES ('5', '2018-12-07 20:26:57', '169', '0', '0000000020', '1');
+
+-- ----------------------------
+-- Table structure for item_ordersdetail
+-- ----------------------------
+DROP TABLE IF EXISTS `item_ordersdetail`;
+CREATE TABLE `item_ordersdetail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `itemsNum` int(11) DEFAULT NULL,
+  `orders_id` int(11) DEFAULT NULL,
+  `items_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `orders_id` (`orders_id`),
+  KEY `FKnpo0d577otvusgjp8fc7b8e8m` (`items_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of item_ordersdetail
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for item_shippingaddress
@@ -255,46 +276,6 @@ INSERT INTO `man_show` VALUES ('m09', 'images/sheetbandimage/mansheet/9.png');
 INSERT INTO `man_show` VALUES ('m10', 'images/sheetbandimage/mansheet/10.png');
 
 -- ----------------------------
--- Table structure for man_show_imgtext
--- ----------------------------
-DROP TABLE IF EXISTS `man_show_imgtext`;
-CREATE TABLE `man_show_imgtext` (
-  `id` int(11) NOT NULL DEFAULT '0',
-  `img` varchar(255) NOT NULL,
-  `img_text` varchar(255) NOT NULL,
-  `img_intro` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of man_show_imgtext
--- ----------------------------
-INSERT INTO `man_show_imgtext` VALUES ('1', 'images/sheetimage/mansheetimage/bigsheet.png', '森达', '潮流新品特惠');
-INSERT INTO `man_show_imgtext` VALUES ('2', 'images/sheetimage/mansheetimage/mansheet1.png', '百丽', '专柜同款');
-INSERT INTO `man_show_imgtext` VALUES ('3', 'images/sheetimage/mansheetimage/mansheet2.png', '他她', '型男首选');
-INSERT INTO `man_show_imgtext` VALUES ('4', 'images/sheetimage/mansheetimage/mansheet3.png', '爱优', '美式休闲时尚');
-INSERT INTO `man_show_imgtext` VALUES ('5', 'images/sheetimage/mansheetimage/mansheet4.png', '拔佳', '春季出游潮搭');
-INSERT INTO `man_show_imgtext` VALUES ('6', 'images/sheetimage/mansheetimage/mansheet6.png', '天美意', '焕季潮流');
-
--- ----------------------------
--- Table structure for man_show_title
--- ----------------------------
-DROP TABLE IF EXISTS `man_show_title`;
-CREATE TABLE `man_show_title` (
-  `id` int(11) NOT NULL,
-  `title_top` varchar(255) NOT NULL,
-  `more` varchar(255) NOT NULL,
-  `title_texto` varchar(255) NOT NULL,
-  `title_textt` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of man_show_title
--- ----------------------------
-INSERT INTO `man_show_title` VALUES ('1', '男鞋馆 MEN\'SHOES', 'MORE', '商务鞋', '休闲鞋');
-
--- ----------------------------
 -- Table structure for messageboard
 -- ----------------------------
 DROP TABLE IF EXISTS `messageboard`;
@@ -348,29 +329,6 @@ INSERT INTO `orderdetails` VALUES ('11587', 'ms005', '1', '2018-06-29 16:19:21')
 INSERT INTO `orderdetails` VALUES ('13317', 'ms002', '1', '2018-06-29 17:30:33');
 INSERT INTO `orderdetails` VALUES ('16048', 'ms004', '1', '2018-07-03 10:22:19');
 INSERT INTO `orderdetails` VALUES ('14926', 'ms003', '1', '2018-07-03 19:56:09');
-
--- ----------------------------
--- Table structure for sport_show_imgtext
--- ----------------------------
-DROP TABLE IF EXISTS `sport_show_imgtext`;
-CREATE TABLE `sport_show_imgtext` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `img` varchar(255) NOT NULL,
-  `img_text` varchar(255) NOT NULL,
-  `img_intro` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sport_show_imgtext
--- ----------------------------
-INSERT INTO `sport_show_imgtext` VALUES ('1', 'images/sheetbandimage/mansheet02/11.png', 'T恤', '初夏精选');
-INSERT INTO `sport_show_imgtext` VALUES ('2', 'images/sheetbandimage/mansheet02/h1.png', '休闲鞋', '美丽焕新');
-INSERT INTO `sport_show_imgtext` VALUES ('3', 'images/sheetbandimage/mansheet02/h2.png', '耐克', '春夏上新');
-INSERT INTO `sport_show_imgtext` VALUES ('4', 'images/sheetbandimage/mansheet02/h3.png', '彪马', '经典由你');
-INSERT INTO `sport_show_imgtext` VALUES ('5', 'images/sheetbandimage/mansheet02/h4.png', '阿迪休闲', '酷感升级');
-INSERT INTO `sport_show_imgtext` VALUES ('6', 'images/sheetbandimage/mansheet02/h5.png', '三叶草', '不止一面造型');
-INSERT INTO `sport_show_imgtext` VALUES ('7', 'images/sheetbandimage/mansheet02/h6.png', '夹克', '春款上市');
 
 -- ----------------------------
 -- Table structure for user
